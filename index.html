@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <h1>Mutiplication Table Generator</h1>
+
+  <label>Enter a number:</label>
+  <input type="number" id="numberInput" min="1" />
+  <button id="generateTable">Generate Table</button>
+
+  <div id="tables"></div>
+
+  <script>
+    const generateTableBtn = document.querySelector('#generateTable');
+    const tables = document.querySelector('#tables')
+
+
+    generateTableBtn.addEventListener('click', function () {
+      const numberInput = document.querySelector('#numberInput').value;
+      displayTables(numberInput)
+    })
+
+    function displayTables(numberInput) {
+      for (let i = 0; i <= 10; i++) {
+        const span = document.createElement('div')
+
+        span.textContent = `${numberInput} * ${i} = ${numberInput * i}`
+
+        tables.appendChild(span)
+      }
+    }
+
+  </script>
+
+</body>
+
+</html>
